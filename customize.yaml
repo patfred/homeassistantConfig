@@ -1,0 +1,33 @@
+zwave.aeotec_zw090_zstick_gen5_eu:
+  is_zwave_plus: true
+sensor.aeotec_dsb05_multisensor_temperature_2:
+  friendly_name: Temperatur
+sensor.aeotec_dsb05_multisensor_relative_humidity_2:
+  friendly_name: Luftfuktighet
+sensor.aeotec_dsb05_multisensor_luminance_2:
+  friendly_name: Ljus
+zwave.aeotec_dsb05_multisensor_2:
+  hidden: false
+group.all_lights:
+  hidden: false
+  friendly_name: Spottar
+group.all_switches:
+  hidden: true
+group.all_automations:
+  hidden: false
+  friendly_name: Automationer
+sensor.weather_temperature:
+  friendly_name: Temperatur
+sensor.weather_wind_speed:
+  friendly_name: Vind
+  icon: mdi:weather-windy
+sensor.weather_humidity:
+  friendly_name: Luftfuktighet
+  icon: mdi:water
+sun.sun:
+  friendly_name: Sol
+sensor.weather_cloudiness:
+  friendly_name: Molnighet
+  icon: mdi:cloud
+device.tracker:
+  hidden: false

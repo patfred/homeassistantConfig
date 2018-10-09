@@ -1,0 +1,3 @@
+alarm_clock:
+  module: alarm
+  class: alarmclock

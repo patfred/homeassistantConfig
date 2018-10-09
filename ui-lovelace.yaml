@@ -1,0 +1,80 @@
+title: Villapatlex
+views:
+  - title: Hem
+    icon: mdi:home
+    cards:
+
+    ##### VÄDER #####
+      - type: entities
+        title: "Väder"
+        show_header_toggle: true
+        entities:
+          - sensor.weather_temperature
+          - sensor.weather_wind_speed
+          - sensor.weather_humidity
+          - sensor.weather_cloudiness
+          - sun.sun
+
+      ##### TRACKER #####
+      #- type: entities
+        #title: "Vem är hemma?"
+        #show_header_toggle: true
+        #entities:
+          #- device_tracker.c498809ef9b0
+          #- device_tracker.98ca33907173
+  
+  ##### BELYSNING #####
+  - title: Belysning
+    icon: mdi:lightbulb
+    cards:
+      - type: entities
+        title: Mysbelysning
+        show_header_toggle: true
+        entities:
+          - switch.light_1
+          - switch.light_2
+          - switch.light_3
+          - switch.light_4
+          - switch.light_5
+      - type: entities
+        title: Spottar
+        show_header_toggle: true
+        entities:
+          - light.qubino_zmnhdd1_flush_dimmer_level
+          - light.qubino_zmnhdd1_flush_dimmer_level_2
+          - light.qubino_zmnhdd1_flush_dimmer_level_3
+
+  ###### BILEN #####
+  - title: Bilen
+    icon: mdi:car
+    cards:
+      - type: entities
+        title: Bilen
+        show_header_toggle: true
+        entities:
+          - binary_sensor.yml395_brake_fluid
+          - binary_sensor.yml395_bulbs
+          - binary_sensor.yml395_doors
+          - binary_sensor.yml395_service
+          - binary_sensor.yml395_washer_fluid
+          - binary_sensor.yml395_windows
+          - device_tracker.volvo_yml395
+          - lock.yml395_lock
+          - sensor.yml395_fuel_amount
+          - sensor.yml395_fuel_consumption
+          - sensor.yml395_fuel_level
+          - sensor.yml395_odometer
+          - sensor.yml395_range
+          - switch.yml395_heater
+
+    ##### Automations ######
+  - title: Automationer
+    icon: mdi:cogs
+    cards:
+      - type: entities
+        title: Automationer
+        show_header_toggle: true
+        entities:
+          - automation.slack_alla_ljus_2300
+          - automation.tand_0630_pa_vardagar
+          - automation.tand_stamningsbelysning_vid_solnedgang

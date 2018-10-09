@@ -1,0 +1,52 @@
+- alias: 'Släck alla ljus 23:00'
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  condition:
+    - condition: time
+      after: '22:59:58'
+      before: '23:00:02'
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - sun
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - group.mysbelysning
+          - group.all_lights
+
+- alias: 'Tänd 06:30 på vardagar'
+  trigger:
+    platform: time
+    at: '06:30:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - group.Morgonlampor
+
+- alias: 'Tänd stämningsbelysning vid solnedgång'
+  trigger: 
+    platform: sun
+    event: sunset
+    offset: '+00:00:00'
+  action:
+    service: homeassistant.turn_on
+    entity_id: 
+      - group.mysbelysning

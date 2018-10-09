@@ -1,0 +1,79 @@
+Mysbelysning:
+  name: Mysbelysning
+  entities:
+    - switch.light_1
+    - switch.light_2
+    - switch.light_3
+    - switch.light_4
+    - switch.light_5
+
+Morgonlampor:
+  name: Morgonlampor
+  entities:
+    - switch.light_2
+    - switch.light_3
+    - light.qubino_zmnhdd1_flush_dimmer_level_3
+
+Bilen:
+  name: Bilen
+  entities:
+    - binary_sensor.yml395_brake_fluid
+    - binary_sensor.yml395_bulbs
+    - binary_sensor.yml395_doors
+    - binary_sensor.yml395_service
+    - binary_sensor.yml395_washer_fluid
+    - binary_sensor.yml395_windows
+    - device_tracker.volvo_yml395
+    - lock.yml395_lock
+    - sensor.yml395_fuel_amount
+    - sensor.yml395_fuel_consumption
+    - sensor.yml395_fuel_level
+    - sensor.yml395_odometer
+    - sensor.yml395_range
+    - switch.yml395_heater
+
+Väder:
+  name: Väder
+  entities:
+    - sensor.weather_temperature
+    - sensor.weather_wind_speed
+    - sensor.weather_humidity
+    - sensor.weather_cloudiness
+    - sun.sun
+
+tracker:
+  name: Vem är hemma?
+  entities:
+    - device_tracker.c498809ef9b0
+    - device_tracker.98ca33907173
+
+#Views
+default_view:
+  view: yes
+  icon: mdi:home
+  name: Hem
+  entities:  
+    - group.vader
+    - group.tracker
+
+belysning_view:
+  view: yes
+  icon: mdi:lightbulb
+  name: Belysning
+  entities:
+    - group.Mysbelysning
+    - group.all_lights
+
+bil_view:
+  view: yes
+  icon: mdi:car
+  name: Bilen
+  entities:
+    - group.Bilen
+
+automationer_view:
+  view: yes
+  icon: mdi:cogs
+  name: Automationer
+  entities:
+    - group.all_automations
